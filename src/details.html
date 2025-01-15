@@ -376,11 +376,11 @@ if (selectedProperty) {
       Contact Us
     </button>
   `;
-  // Add event listeners to all thumbnail images after the HTML is rendered
+   
   document.querySelectorAll('.thumbnail').forEach(thumbnail => {
     thumbnail.addEventListener('click', function () {
-      const imageUrl = this.getAttribute('data-url');  // Get the URL from data-url attribute
-      updateMainImage(imageUrl);  // Update the main image when clicked
+      const imageUrl = this.getAttribute('data-url');   
+      updateMainImage(imageUrl);   
     });
   });
 } else {
