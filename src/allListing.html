@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../dist/Image/logo(2).jpg">
+    <title>Estately</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+
+    <!--Loader start-->
+    <div id="loader" class="z-50 fixed inset-0 flex justify-center items-center bg-white">
+        <div class="spinner-border text-orange-500" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!--Loader End-->
+
+
+
+    <div id="main-content" style="display: none;">
+        <!--Navbar start-->
+        <nav class="bg-gray-800 shadow-lg">
+            <div class="mx-auto px-4 py-2 container">
+                <div class="flex justify-between items-center h-16">
+                    <img src="../dist/Image/logo.png" alt="Logo">
+
+                    <button id="navbar-toggle" class="lg:hidden p-2 text-white focus:outline-none"
+                        aria-label="Toggle Navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+
+                    <div
+                        class="lg:flex justify-center items-center space-x-8 hidden w-full font-medium text-lg text-white">
+                        <a href="../index.html" class="hover:text-orange-500">HOME</a>
+                        <a href="../src/about.html" class="hover:text-orange-500">ABOUT</a>
+                        <a href="../src/service.html" class="hover:text-orange-500">SERVICES</a>
+                        <a href="../src/allListing.html" class="hover:text-orange-500">PLOTS</a>
+                        <a href="../src/contact.html" class="hover:text-orange-500">CONTACTS</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden lg:hidden bg-gray-800 p-4 text-white">
+                <a href="../index.html" class="hover:text-orange-500">HOME</a>
+                <a href="../src/about.html" class="hover:text-orange-500">ABOUT</a>
+                <a href="../src/service.html" class="hover:text-orange-500">SERVICES</a>
+                <a href="../src/allListing.html" class="hover:text-orange-500">PLOTS</a>
+                <a href="../src/contact.html" class="hover:text-orange-500">CONTACTS</a>
+            </div>
+        </nav>
+        <!--Navbar End-->
+        <!-- Search Bar start-->
+        <div class="py-6 w-[80%] container">
+            <div class="flex justify-center">
+                <div class="flex shadow-lg w-full max-w-4xl">
+                    <input id="locationSearch" type="text" placeholder="Search by location..."
+                        class="input-shadow p-4 w-full text-black" />
+                    <button for="locationSearch"
+                        class="bg-orange-500 hover:bg-orange-600 px-6 py-4 text-white">Search</button>
+                </div>
+            </div>
+        </div>
+        <!-- Search Bar end-->
+        <!--other content start-->
+        <div class="mx-auto px-4 container">
+            <div
+                class="gap-4 grid grid-cols-1 lg:grid-cols-3 max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl container">
+                <div class="col-span-1">
+                    <!-- Filters Section -->
+                    <div class="bg-gray-800 shadow-lg p-6 rounded-lg text-white container">
+                        <div class="mb-4">
+                            <label for="typeFilter" class="block font-medium text-sm">Property Type</label>
+                            <select id="typeFilter"
+                                class="border-gray-600 bg-black p-3 border rounded w-full text-white">
+                                <option value="">Select Type</option>
+                                <option value="Flat">Flat</option>
+                                <option value="Apartment">Apartment</option>
+                                <option value="House">House</option>
+                                <option value="Villa">Villa</option>
+                            </select>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div class="mb-4">
+                            <label for="priceRange" class="block font-medium text-sm">Price Range (₹)</label>
+                            <input type="range" id="priceRange" min="0" max="10000000" step="100000"
+                                class="mt-2 w-full">
+                            <div class="flex justify-between mt-1 text-xs">
+                                <span>₹5Lac</span>
+                                <span>₹10Cr</span>
+                            </div>
+                        </div>
+
+                        <!-- Bedrooms Filter -->
+                        <div class="mb-4">
+                            <label for="bedroomRange" class="block font-medium text-sm">Bedrooms</label>
+                            <input type="range" id="bedroomRange" min="0" max="5" step="1" class="mt-2 w-full">
+                            <div class="flex justify-between mt-1 text-xs">
+                                <span>0</span>
+                                <span>5+</span>
+                            </div>
+                        </div>
+
+                        <!-- Furnish Filter -->
+                        <div class="mb-4">
+                            <label for="furnishFilter" class="block font-medium text-sm">Furnish Type</label>
+                            <select id="furnishFilter"
+                                class="border-gray-600 bg-black p-3 border rounded w-full text-white">
+                                <option value="">Select Furnish Type</option>
+                                <option value="Furnished">Furnished</option>
+                                <option value="Semi-Furnished">Semi-Furnished</option>
+                                <option value="Unfurnished">Unfurnished</option>
+                            </select>
+                        </div>
+
+                        <!-- Parking Filter -->
+                        <div class="mb-4">
+                            <label for="parkingFilter" class="block font-medium text-sm">Parking</label>
+                            <select id="parkingFilter"
+                                class="border-gray-600 bg-black p-3 border rounded w-full text-white">
+                                <option value="">Select Parking</option>
+                                <option value="1 Covered">1 Covered</option>
+                                <option value="2 Covered">2 Covered</option>
+                                <option value="No Parking">No Parking</option>
+                            </select>
+                        </div>
+
+                        <!-- Reset Filters Button -->
+                        <button id="resetFilters"
+                            class="bg-orange-500 hover:bg-orange-600 p-3 rounded w-full text-white">
+                            Reset Filters
+                        </button>
+                    </div>
+                </div>
+                <!-- Results Section -->
+                <div class="col-span-2 container">
+                    <div id="results" class="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                        <!-- Property cards will be dynamically inserted here -->
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="pagination" class="flex justify-center mt-6 mb-5"></div>
+        </div>
+        <!--other content end-->
+
+        <!-- Footer start -->
+        <footer class="bg-gray-900 py-12 text-white">
+            <div class="gap-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-auto container">
+
+                <div class="container">
+                    <h3 class="mb-4 font-bold text-orange-500 text-xl">About Us</h3>
+                    <p class="text-gray-400 text-lg">Estately are dedicated to helping you find
+                        your dream home. Our team of experts is here to guide you through every step of the process.</p>
+                </div>
+
+                <div>
+                    <h3 class="mb-4 font-bold text-orange-500 text-xl">Quick Links</h3>
+                    <ul class="text-gray-400 text-lg">
+                        <li class="mb-2"><a href="../index.html" class="hover:text-orange-500">Home</a></li>
+                        <li class="mb-2"><a href="../src/about.html" class="hover:text-orange-500">About</a></li>
+                        <li class="mb-2"><a href="../src/service.html" class="hover:text-orange-500">Services</a></li>
+                        <li class="mb-2"><a href="../src/allListing.html" class="hover:text-orange-500">Plots</a></li>
+                        <li class="mb-2"><a href="../src/contact.html" class="hover:text-orange-500">Contacts</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="mb-4 font-bold text-orange-500 text-xl">Contact Us</h3>
+                    <p class="text-gray-400 text-lg">123 Estately<br>Mumbai, India<br>Email:
+                        info@Estately.com<br>Phone: +91 123 456 7890</p>
+                </div>
+
+                <div>
+                    <h3 class="mb-4 font-bold text-orange-500 text-xl">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl text-blue-600 hover:text-orange-500"><i
+                                class="fa-facebook-f fab"></i></a>
+                        <a href="#" class="text-2xl text-blue-400 hover:text-orange-500"><i
+                                class="fa-twitter fab"></i></a>
+                        <a href="#" class="text-2xl text-pink-600 hover:text-orange-500"><i
+                                class="fa-instagram fab"></i></a>
+                        <a href="#" class="text-2xl text-blue-700 hover:text-orange-500"><i
+                                class="fa-linkedin-in fab"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-500 text-lg">
+                <p>&copy; 2025 Estately Company. All rights reserved.</p>
+                <p>Made by Garima Upadhyay❤️</p>
+            </div>
+        </footer>
+        <!-- Footer end -->
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="../dist/Js/index.js"></script>
+    <script src="../dist/Js/listing.js"></script>
+
+</body>
+
+</html>

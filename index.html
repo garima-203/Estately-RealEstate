@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="dist/Image/logo(2).jpg">
+    <title>Estately</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+
+    <!--Loader start-->
+    <div id="loader" class="z-50 fixed inset-0 flex justify-center items-center bg-white">
+        <div class="spinner-border text-orange-500" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!--Loader End-->
+
+
+
+    <div id="main-content" style="display: none;">
+        <!--Navbar start-->
+        <nav class="bg-gray-800 shadow-lg">
+            <div class="mx-auto px-4 py-2 container">
+                <div class="flex justify-between items-center h-12">
+                    <img src="./dist/Image/logo.png" alt="Logo" class="">
+
+                    <button id="navbar-toggle" class="lg:hidden p-2 text-white focus:outline-none"
+                        aria-label="Toggle Navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+
+                    <div
+                        class="lg:flex justify-center items-center space-x-8 hidden w-full font-medium text-sm text-white">
+                        <a href="/index.html" class="hover:text-orange-500">HOME</a>
+                        <a href="./src/about.html" class="hover:text-orange-500">ABOUT</a>
+                        <a href="./src/service.html" class="hover:text-orange-500">SERVICES</a>
+                        <a href="./src/allListing.html" class="hover:text-orange-500">PLOTS</a>
+                        <a href="./src/contact.html" class="hover:text-orange-500">CONTACTS</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden lg:hidden bg-gray-800 p-4 text-white">
+                <a href="./index.html" class="hover:text-orange-500">HOME</a>
+                <a href="./src/about.html" class="hover:text-orange-500">ABOUT</a>
+                <a href="./src/service.html" class="hover:text-orange-500">SERVICES</a>
+                <a href="./src/allListing.html" class="hover:text-orange-500">PLOTS</a>
+                <a href="/src/contact.html" class="hover:text-orange-500">CONTACTS</a>
+            </div>
+        </nav>
+        <!--Navbar End-->
+
+        <!--Hero Section start-->
+        <div class="bg-cover bg-center" style="background-image: url('./dist/Image/hero.jpg');">
+            <div class="flex justify-center items-center bg-black bg-opacity-50 h-screen">
+                <div class="bg-white mx-auto p-8 rounded-lg w-full max-w-sm">
+                    <h2 class="mb-6 font-semibold text-center text-gray-800 text-xl"
+                        style="font-family: 'Great Vibes', cursive;">Find Your Perfect Home</h2>
+                    <form action="./src/allListing.html" method="GET" class="space-y-4">
+                        <label for="location" class="block font-medium text-gray-700 text-sm">Enter Location:</label>
+                        <input type="text" id="location" name="search" placeholder="Location"
+                            class="block border-gray-300 shadow-sm mt-1 px-4 py-2 border focus:border-red-500 rounded-md focus:ring-red-500 w-full sm:text-sm"
+                            required>
+                        <button type="submit"
+                            class="bg-red-600 hover:bg-red-700 px-4 py-3 rounded-md focus:ring-2 focus:ring-red-500 focus:ring-offset-2 w-full font-semibold text-sm text-white transition focus:outline-none">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--Hero Section End-->
+
+
+        <!--Section Card And Courousel Start-->
+        <div class="my-5 container">
+            <div class="justify-center items-center my-5 text-center container g-4 row">
+                <div class="col-md-4">
+                    <div class="bg-light p-4 rounded info-card">
+                        <h3 class="fw-bold text-primary display-5">500+</h3>
+                        <p class="text-secondary fs-5">Total Properties</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-light p-4 rounded info-card">
+                        <h3 class="fw-bold text-success display-5">200+</h3>
+                        <p class="text-secondary fs-5">Trusted Agents</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="bg-light p-4 rounded info-card">
+                        <h3 class="fw-bold text-warning display-5">1000+</h3>
+                        <p class="text-secondary fs-5">Happy Customers</p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center container">
+                <div id="propertyCarousel" class="lg:w-2/3 carousel slide" data-bs-ride="carousel">
+                    <!-- Carousel Inner -->
+                    <div class="carousel-inner">
+                        <div class="active carousel-item">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/003/438/961/small_2x/frame-house-under-construction-house-interior-residential-home-photo.jpg"
+                                class="d-block w-100 h-96" alt="Property Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://chfl.co.in/wp-content/uploads/2023/03/construction-residential-new-house-progress-building-sitee.jpg"
+                                class="d-block w-100 h-96" alt="Property Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://www.constructionnews.co.in/images/step-by-step-construction-process-house.jpg"
+                                class="d-block w-100 h-96" alt="Property Image 3">
+                        </div>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--Section Card And Courousel End-->
+
+        <div class="space-y-6 p-4 container">
+            <div class="gap-6 grid grid-cols-1 lg:grid-cols-5">
+                <div class="space-y-6 lg:col-span-3">
+                    <!-- Latest Listing of Plots Section start -->
+                    <div class="shadow-lg mt-5 p-4 container">
+                        <h1 class="mb-6 font-bold text-3xl text-orange-500"
+                            style="font-family: 'Great Vibes', cursive;">Latest Listing</h1>
+                        <div class="gap-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                            <div class="border-gray-200 bg-white mx-auto border rounded-lg max-w-sm">
+                                <div class="relative">
+                                    <img src="./dist/Image/LL-1.jpg" alt="Property Image"
+                                        class="rounded-t-lg w-full h-56">
+                                    <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                        <i class="fa-heart far"></i>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2 p-2">
+                                    <span
+                                        class="bg-red-500 px-3 py-1 rounded-full text-white text-xs uppercase">House</span>
+                                    <span
+                                        class="bg-red-500 px-3 py-1 rounded-full text-white text-xs uppercase">Sale</span>
+                                </div>
+                                <div class="px-4">
+                                    <h3 class="font-bold text-gray-900 text-lg">Modern Flats</h3>
+                                    <p class="flex items-center mt-2 text-gray-500 text-sm">
+                                        <i class="mr-2 fa-map-marker-alt fas"></i> Andheri, Mumbai, India
+                                    </p>
+                                </div>
+                                <div class="flex justify-between items-center border-gray-200 px-4 py-1 border-t">
+                                    <div class="flex items-center text-gray-600 text-sm">
+                                        <i class="mr-1 text-red-500 fa-bed fa-solid"></i> 3
+                                    </div>
+                                    <div class="flex items-center text-gray-600 text-sm">
+                                        <i class="mr-1 text-red-500 fa-bath fa-solid"></i> 2
+                                    </div>
+                                    <div class="flex items-center text-gray-600 text-sm">
+                                        <i class="mr-1 text-red-500 fa-expand fas"></i> 750 sqft
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <a href="#"
+                                        class="block bg-red-500 hover:bg-red-600 mx-auto py-2 rounded-lg font-semibold text-center text-sm text-white">
+                                        View Property
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="border-gray-200 bg-white mx-auto border rounded-lg max-w-sm">
+                                <div class="relative">
+                                    <img src="./dist/Image/LL-2.jpg" alt="Property Image"
+                                        class="rounded-t-lg w-full h-56">
+                                    <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                        <i class="fa-heart far"></i>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2 p-2">
+                                    <span
+                                        class="bg-red-500 px-3 py-1 rounded-full text-white text-xs uppercase">Villa</span>
+                                    <span
+                                        class="bg-red-500 px-3 py-1 rounded-full text-white text-xs uppercase">Rent</span>
+                                </div>
+                                <div class="px-4">
+                                    <h3 class="font-bold text-gray-900 text-lg">Luxury Villa in Goa</h3>
+                                    <p class="flex items-center mt-2 text-gray-500 text-sm">
+                                        <i class="mr-2 fa-map-marker-alt fas"></i> Panjim, Goa, India
+                                    </p>
+                                </div>
+                                <div class="flex justify-between items-center border-gray-200 px-4 py-1 border-t">
+                                    <div class="flex items-center text-gray-600 text-sm">
+                                        <i class="mr-1 text-red-500 fa-bed fas"></i> 4
+                                    </div>
+                                    <div class="flex items-center text-gray-600 text-sm">
+                                        <i class="mr-1 text-red-500 fa-bath fas"></i> 3
+                                    </div>
+                                    <div class="flex items-center text-gray-600 text-sm">
+                                        <i class="mr-1 text-red-500 fa-expand fas"></i> 1200 sqft
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <a href="#"
+                                        class="block bg-red-500 hover:bg-red-600 mx-auto py-2 rounded-lg font-semibold text-center text-sm text-white">
+                                        View Property
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="border-gray-200 bg-white mx-auto border rounded-lg max-w-sm">
+                                <div class="relative">
+                                    <img src="./dist/Image/LL-4.jpg" alt="Property Image"
+                                        class="rounded-t-lg w-full h-56">
+                                    <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                        <i class="fa-heart far"></i>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2 p-2">
+                                    <span
+                                        class="bg-red-500 px-3 py-1 rounded-full text-white text-xs uppercase">Bungalow</span>
+                                    <span
+                                        class="bg-red-500 px-3 py-1 rounded-full text-white text-xs uppercase">Sale</span>
+                                </div>
+                                <div class="px-4">
+                                    <h3 class="font-bold text-gray-900 text-lg">Spacious Bungalow</h3>
+                                    <p class="flex items-center mt-2 text-gray-500 text-sm">
+                                        <i class="mr-2 fa-map-marker-alt fas"></i> Alibaug, Maharashtra,
+                                    </p>
+                                </div>
+                                <div class="flex justify-between items-center border-gray-200 px-4 py-1 border-t">
+                                    <div class="flex items-center text-gray-600 text-sm">
+                                        <i class="mr-1 text-red-500 fa-bed fas"></i> 5
+                                    </div>
+                                    <div class="flex items-center text-gray-600 text-sm">
+                                        <i class="mr-1 text-red-500 fa-bath fas"></i> 4
+                                    </div>
+                                    <div class="flex items-center text-gray-600 text-sm">
+                                        <i class="mr-1 text-red-500 fa-expand fas"></i> 1800 sqft
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <a href="#"
+                                        class="block bg-red-500 hover:bg-red-600 mx-auto py-2 rounded-lg font-semibold text-center text-sm text-white">
+                                        View Property
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Latest Listing of Plots Section end-->
+
+                    <!--Featured Properties start-->
+                    <div class="shadow-lg my-5 p-4 container">
+                        <h1 class="mb-5 font-bold text-3xl text-orange-500 text-start"
+                            style="font-family: 'Great Vibes', cursive;">Featured Properties</h1>
+                        <div class="max-w-4xl mySwiper swiper">
+                            <div class="text-center swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="border-gray-200 bg-white border rounded-lg">
+                                        <img src="https://destinationcompress.s3.ap-south-1.amazonaws.com/ca2043e0-0bd1-4bae-a68c-c6f6519945f2.jpg"
+                                            alt="Luxury Villa" class="rounded-t-lg w-full h-56">
+                                        <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                            <i class="fa-heart far"></i>
+                                        </div>
+                                        <div class="p-4">
+                                            <h5 class="font-bold text-gray-900 text-lg">Luxury Villa</h5>
+                                            <p class="text-gray-500">A stunning villa with modern amenities and a
+                                                beautiful
+                                                garden.
+                                            </p>
+                                            <a href="#" class="font-semibold text-orange-500 hover:text-orange-600">View
+                                                Details <i class="fa-arrow-right fas"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="border-gray-200 bg-white mx-auto border rounded-lg">
+                                        <img src="https://hips.hearstapps.com/hmg-prod/images/california-craftsman-home-roger-davies-66a94801ee7aa.jpg?crop=0.881xw:0.736xh;0.0612xw,0.152xh&resize=980:*"
+                                            alt="Cozy Cottage" class="rounded-t-lg w-full h-56">
+                                        <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                            <i class="fa-heart far"></i>
+                                        </div>
+                                        <div class="p-4">
+                                            <h5 class="font-bold text-gray-900 text-lg">Cozy Cottage</h5>
+                                            <p class="text-gray-500">A charming cottage with a cozy interior and a
+                                                lovely
+                                                garden.
+                                            </p>
+                                            <a href="#" class="font-semibold text-orange-500 hover:text-orange-600">View
+                                                Details <i class="fa-arrow-right fas"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="border-gray-200 bg-white border rounded-lg">
+                                        <img src="https://www.commercialproperty.review/wp-content/uploads/2020/10/Ace-City-Apartments-Greater-Noida-West.jpg"
+                                            alt="Urban Apartment" class="rounded-t-lg w-full h-56">
+                                        <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                            <i class="fa-heart far"></i>
+                                        </div>
+                                        <div class="p-4">
+                                            <h5 class="font-bold text-gray-900 text-lg">Urban Apartment</h5>
+                                            <p class="text-gray-500">A modern apartment with city views and
+                                                luxurious
+                                                amenities.</p>
+                                            <a href="#" class="font-semibold text-orange-500 hover:text-orange-600">View
+                                                Details <i class="fa-arrow-right fas"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="border-gray-200 bg-white border rounded-lg">
+                                        <img src="https://assets.architecturaldigest.in/photos/626f8189a3ac7818a7dd5fee/master/pass/Explore%20a%20spacious%20bungalow%20in%20Gujarat%20that's%20built%20around%20a%20mango%20orchard.jpg"
+                                            alt="Spacious Bungalow" class="rounded-t-lg w-full h-56">
+                                        <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                            <i class="fa-heart far"></i>
+                                        </div>
+                                        <div class="p-4">
+                                            <h5 class="font-bold text-gray-900 text-lg">Spacious Bungalow</h5>
+                                            <p class="text-gray-500">A large bungalow with ample space and modern
+                                                facilities.</p>
+                                            <a href="#" class="font-semibold text-orange-500 hover:text-orange-600">View
+                                                Details <i class="fa-arrow-right fas"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="border-gray-200 bg-white border rounded-lg">
+                                        <img src="https://megafurniture.sg/cdn/shop/articles/modern-condo-renovation-ideas-small-home-zoning-interior-design-megafurniture.jpg?v=1721303884"
+                                            alt="Modern Condo" class="rounded-t-lg w-full h-56">
+                                        <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                            <i class="fa-heart far"></i>
+                                        </div>
+                                        <div class="p-4">
+                                            <h5 class="font-bold text-gray-900 text-lg">Modern Condo</h5>
+                                            <p class="text-gray-500">A stylish condo with contemporary design and
+                                                amenities.
+                                            </p>
+                                            <a href="#" class="font-semibold text-orange-500 hover:text-orange-600">View
+                                                Details <i class="fa-arrow-right fas"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="border-gray-200 bg-white border rounded-lg">
+                                        <img src="https://www.visitmyrtlebeach.com/sites/default/files/styles/listings_teaser_square/public/listing_images/profile/9026/872-sea_star_realty_beach_house.jpg?itok=NCQTtFA9"
+                                            alt="Beach House" class="rounded-t-lg w-full h-56">
+                                        <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                            <i class="fa-heart far"></i>
+                                        </div>
+                                        <div class="p-4">
+                                            <h5 class="font-bold text-gray-900 text-lg">Beach House</h5>
+                                            <p class="text-gray-500">A beautiful beach house with stunning ocean
+                                                views.
+                                            </p>
+                                            <a href="#" class="font-semibold text-orange-500 hover:text-orange-600">View
+                                                Details <i class="fa-arrow-right fas"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="border-gray-200 bg-white border rounded-lg">
+                                        <img src="https://content.jdmagicbox.com/v2/comp/delhi/g7/011pxx11.xx11.231017002431.a9g7/catalogue/m-h-farms-noida-sector-150-greater-noida-farm-house-on-rent-4s4m4frphn.jpg"
+                                            alt="Country House" class="rounded-t-lg w-full h-56">
+                                        <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                            <i class="fa-heart far"></i>
+                                        </div>
+                                        <div class="p-4">
+                                            <h5 class="font-bold text-gray-900 text-lg">Country House</h5>
+                                            <p class="text-gray-500">A charming country house with a large garden.
+                                            </p>
+                                            <a href="#" class="font-semibold text-orange-500 hover:text-orange-600">View
+                                                Details <i class="fa-arrow-right fas"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="border-gray-200 bg-white border rounded-lg max-w-sm">
+                                        <img src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2018/2/8/1/CI_Halstead_History-of-Penthouses-6.jpg.rend.hgtvcom.476.317.85.suffix/1518139442662.webp"
+                                            alt="Penthouse" class="rounded-t-lg w-full h-56">
+                                        <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                            <i class="fa-heart far"></i>
+                                        </div>
+                                        <div class="p-4">
+                                            <h5 class="font-bold text-gray-900 text-lg">Penthouse</h5>
+                                            <p class="text-gray-500">A luxurious penthouse with panoramic city
+                                                views.
+                                            </p>
+                                            <a href="#" class="font-semibold text-orange-500 hover:text-orange-600">View
+                                                Details <i class="fa-arrow-right fas"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-orange-500 swiper-button-next"></div>
+                            <div class="text-orange-500 swiper-button-prev"></div>
+                        </div>
+                    </div>
+                    <!--Featured Properties end-->
+                    <!-- Currently Running Projects Section start -->
+                    <div class="shadow-lg my-5 p-4 container">
+                        <h1 class="mb-5 font-bold text-3xl text-orange-500 text-start"
+                            style="font-family: 'Great Vibes', cursive;">Currently Running Projects</h1>
+                        <div class="gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                            <div class="border-gray-200 bg-white mx-auto border rounded-lg max-w-sm">
+                                <div class="relative">
+                                    <img src="https://www.mrhmfl.co.in/images/gallery/home_construction_loan.jpg"
+                                        alt="Project Image 1" class="rounded-t-lg w-full h-56">
+                                    <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                        <i class="fa-heart far"></i>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="font-bold text-gray-900 text-lg">Skyline Apartments</h3>
+                                    <p class="text-gray-500">Location: Mumbai, Maharashtra</p>
+                                    <p class="text-gray-500">Status: 70% Completed</p>
+                                    <a href="#"
+                                        class="block bg-red-500 hover:bg-red-600 mx-auto mt-4 py-2 rounded-lg font-semibold text-center text-sm text-white">
+                                        View Project
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="border-gray-200 bg-white mx-auto border rounded-lg max-w-sm">
+                                <div class="relative">
+                                    <img src="https://media.istockphoto.com/id/2134396956/photo/house-with-scaffolding.jpg?s=612x612&w=0&k=20&c=FCYaaTmoAk0ijHY9T9h3Zty96aX27CgKFISzp_ir87Q="
+                                        alt="Project Image 2" class="rounded-t-lg w-full h-56">
+                                    <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                        <i class="fa-heart far"></i>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="font-bold text-gray-900 text-lg">Garden Villas</h3>
+                                    <p class="text-gray-500">Location: Bengaluru, Karnataka</p>
+                                    <p class="text-gray-500">Status: 50% Completed</p>
+                                    <a href="#"
+                                        class="block bg-red-500 hover:bg-red-600 mx-auto mt-4 py-2 rounded-lg font-semibold text-center text-sm text-white">
+                                        View Project
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="border-gray-200 bg-white mx-auto border rounded-lg max-w-sm">
+                                <div class="relative">
+                                    <img src="https://www.thelilypadcottage.com/wp-content/uploads/2024/02/IMG_8441-scaled.jpg"
+                                        alt="Project Image 4" class="rounded-t-lg w-full h-56">
+                                    <div class="top-3 right-3 absolute text-white text-xl cursor-pointer">
+                                        <i class="fa-heart far"></i>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <h3 class="font-bold text-gray-900 text-lg">Lakeview Residences</h3>
+                                    <p class="text-gray-500">Location: Hyderabad, Telangana</p>
+                                    <p class="text-gray-500">Status: 90% Completed</p>
+                                    <a href="#"
+                                        class="block bg-red-500 hover:bg-red-600 mx-auto mt-4 py-2 rounded-lg font-semibold text-center text-sm text-white">
+                                        View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Currently Running Projects Section end -->
+                </div>
+
+                <!-- Graph Cards Section start -->
+                <div class="space-y-6 lg:col-span-2 mt-5">
+                    <!-- Sales Data -->
+                    <div>
+                        <h1 class="mb-2 font-bold text-2xl text-center text-orange-500"
+                            style="font-family: 'Great Vibes', cursive;">Sales Data</h1>
+                        <div
+                            class="border-gray-200 bg-white shadow-md mx-auto p-4 border rounded-lg max-w-sm lg:max-w-full">
+                            <canvas id="salesChart" class="w-full h-44"></canvas>
+                        </div>
+                    </div>
+                    <!-- Customer Growth -->
+                    <div>
+                        <h1 class="mb-2 font-bold text-2xl text-center text-orange-500"
+                            style="font-family: 'Great Vibes', cursive;">Customer Growth</h1>
+                        <div
+                            class="border-gray-200 bg-white shadow-md mx-auto p-4 border rounded-lg max-w-sm lg:max-w-full">
+                            <canvas id="customerChart" class="w-full h-44"></canvas>
+                        </div>
+                    </div>
+                    <!-- Revenue --> 
+                    <div>
+                        <h1 class="mb-2 font-bold text-2xl text-center text-orange-500"
+                            style="font-family: 'Great Vibes', cursive;">Revenue</h1>
+                        <div
+                            class="border-gray-200 bg-white shadow-md mx-auto p-6 border rounded-lg max-w-sm lg:max-w-full">
+                            <canvas id="revenueChart" class="w-full h-full"></canvas>  
+                        </div>
+                    </div>
+                    <!-- Property Distribution Chart -->
+                    <div>
+                        <h1 class="mb-2 font-bold text-2xl text-center text-orange-500"
+                            style="font-family: 'Great Vibes', cursive;">Property Distribution</h1>
+                        <div
+                            class="border-gray-200 bg-white shadow-md mx-auto p-6 border rounded-lg max-w-sm lg:max-w-full">
+                            <canvas id="propertyChart" class="w-full h-64"></canvas>  
+                        </div>
+                    </div>
+                </div>
+                <!-- Graph Cards Section end -->
+
+
+            </div>
+        </div>
+
+
+        <!-- Blog Post Section start -->
+        <div class="my-2 py-4">
+            <h1 class="mb-5 font-bold text-3xl text-center text-orange-500"
+                style="font-family: 'Great Vibes', cursive;">Latest Blog Posts</h1>
+            <div class="flex flex-wrap justify-center gap-4">
+
+                <div class="border-gray-200 bg-white shadow-lg border rounded-lg max-w-xs">
+                    <div class="relative">
+                        <img src="https://aurealestate.in/websiteimages/blog10-img10-big.jpg" alt="Blog Image"
+                            class="rounded-t-lg w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-gray-900 text-xl">How to Choose the Perfect Property</h3>
+                        <p class="mt-4 text-gray-500">Discover the key factors to consider when selecting your dream
+                            home.
+                            From location to amenities, we cover it all.</p>
+                        <a href="#"
+                            class="block mx-auto mt-6 py-3 rounded-lg font-semibold text-center text-orange-500">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+
+                <div class="border-gray-200 bg-white shadow-lg border rounded-lg max-w-xs">
+                    <div class="relative">
+                        <img src="https://paytmblogcdn.paytm.com/wp-content/uploads/2023/06/Blog_Paytm_Should-you-rent-or-buy-a-house_.jpg"
+                            alt="Blog Image" class="rounded-t-lg w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-gray-900 text-xl">Tips for First-Time Home Buyers</h3>
+                        <p class="mt-4 text-gray-500">Learn essential tips and tricks for buying your first home. From
+                            budgeting to choosing the right location, we've got you covered.</p>
+                        <a href="#"
+                            class="block mx-auto mt-6 py-3 rounded-lg font-semibold text-center text-orange-500">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+
+                <div class="border-gray-200 bg-white shadow-lg border rounded-lg max-w-xs">
+                    <div class="relative">
+                        <img src="https://www.imaginationshaper.com/product_images/top-tips-to-customised-your-new-home-design.jpg"
+                            alt="Blog Image" class="rounded-t-lg w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-gray-900 text-xl">Top 10 Home Renovation Ideas</h3>
+                        <p class="mt-4 text-gray-500">Explore the top 10 home renovation ideas to enhance your living
+                            space.
+                            From kitchen upgrades to bathroom makeovers, find inspiration here.</p>
+                        <a href="#"
+                            class="block mx-auto mt-6 py-3 rounded-lg font-semibold text-center text-orange-500">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post Section end -->
+
+
+        <!-- Testmonial Section start-->
+        <div class="shadow-sm py-12">
+            <div class="mx-auto px-4 container">
+                <h2 class="mb-8 font-semibold text-3xl text-center text-orange-500"
+                    style="font-family: 'Great Vibes', cursive;">What Our Clients Say</h2>
+                <div class="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+                    <div class="bg-white shadow-lg mx-auto p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <img class="border-2 mr-4 border-red-500 rounded-full w-16 h-16"
+                                src="https://i.pinimg.com/550x/f1/79/3e/f1793e26bd3372a59d97ecfe18732749.jpg"
+                                alt="Client 1">
+                            <div>
+                                <p class="font-semibold text-gray-700 text-sm">Ravi Kumar</p>
+                                <p class="text-gray-500 text-sm">Mumbai, India</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"The service was excellent and the property listings were
+                            very
+                            comprehensive. I found my dream home quickly and easily."</p>
+                        <div class="flex items-center mt-4">
+                            <span class="text-yellow-400">
+                                <i class="fa-star fas"></i>
+                                <i class="fa-star fas"></i>
+                                <i class="fa-star fas"></i>
+                                <i class="fa-star fas"></i>
+                                <i class="fa-star-half-alt fas"></i>
+                            </span>
+                            <span class="ml-2 text-gray-600">4.5/5</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white shadow-lg mx-auto p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <img class="border-2 mr-4 border-red-500 rounded-full w-16 h-16"
+                                src="https://cdn2.stylecraze.com/wp-content/uploads/2013/06/Different-Beautiful-American-Girls.jpg.webp"
+                                alt="Client 2">
+                            <div>
+                                <p class="font-semibold text-gray-700 text-sm">Priya Sharma</p>
+                                <p class="text-gray-500 text-sm">Delhi, India</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"I had a great experience with the team. They were very
+                            professional
+                            and helped me find the perfect property for my needs."</p>
+                        <div class="flex items-center mt-4">
+                            <span class="text-yellow-400">
+                                <i class="fa-star fas"></i>
+                                <i class="fa-star fas"></i>
+                                <i class="fa-star fas"></i>
+                                <i class="fa-star fas"></i>
+                                <i class="fa-star fas"></i>
+                            </span>
+                            <span class="ml-2 text-gray-600">5/5</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white shadow-lg mx-auto p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <img class="border-2 mr-4 border-red-500 rounded-full w-16 h-16"
+                                src="https://images.pexels.com/photos/1816654/pexels-photo-1816654.jpeg?cs=srgb&dl=pexels-atef-khaled-825144-1816654.jpg&fm=jpg"
+                                alt="Client 3">
+                            <div>
+                                <p class="font-semibold text-gray-700 text-sm">Amit Patel</p>
+                                <p class="text-gray-500 text-sm">Ahmedabad, India</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"The website is user-friendly and the customer service is
+                            top-notch.
+                            I highly recommend them for anyone looking to buy or rent a property."</p>
+                        <div class="flex items-center mt-4">
+                            <span class="text-yellow-400">
+                                <i class="fa-star fas"></i>
+                                <i class="fa-star fas"></i>
+                                <i class="fa-star fas"></i>
+                                <i class="fa-star fas"></i>
+                                <i class="fa-star far"></i>
+                            </span>
+                            <span class="ml-2 text-gray-600">4/5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testmonial Section end-->
+
+        <!-- Footer start -->
+        <footer class="bg-gray-900 py-12 text-white">
+            <div class="gap-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-auto container">
+
+                <div>
+                    <h3 class="mb-4 font-bold text-orange-500 text-xl">About Us</h3>
+                    <p class="text-gray-400 text-sm">Estately are dedicated to helping you find
+                        your dream home. Our team of experts is here to guide you through every step of the process.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="mb-4 font-bold text-orange-500 text-xl">Quick Links</h3>
+                    <ul class="text-gray-400 text-sm">
+                        <li class="mb-2"><a href="/index.html" class="hover:text-orange-500">Home</a></li>
+                        <li class="mb-2"><a href="./src/about.html" class="hover:text-orange-500">About</a></li>
+                        <li class="mb-2"><a href="./src/service.html" class="hover:text-orange-500">Services</a>
+                        </li>
+                        <li class="mb-2"><a href="./src/allListing.html" class="hover:text-orange-500">Plots</a>
+                        </li>
+                        <li class="mb-2"><a href="./src/contact.html" class="hover:text-orange-500">Contacts</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="mb-4 font-bold text-orange-500 text-xl">Contact Us</h3>
+                    <p class="text-gray-400 text-sm">123 Estately<br>Mumbai, India<br>Email:
+                        info@Estately.com<br>Phone: +91 123 456 7890</p>
+                </div>
+
+                <div>
+                    <h3 class="mb-4 font-bold text-orange-500 text-xl">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl text-blue-600 hover:text-orange-500"><i
+                                class="fa-facebook-f fab"></i></a>
+                        <a href="#" class="text-2xl text-blue-400 hover:text-orange-500"><i
+                                class="fa-twitter fab"></i></a>
+                        <a href="#" class="text-2xl text-pink-600 hover:text-orange-500"><i
+                                class="fa-instagram fab"></i></a>
+                        <a href="#" class="text-2xl text-blue-700 hover:text-orange-500"><i
+                                class="fa-linkedin-in fab"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Estately Company. All rights reserved.</p>
+                <p>Made by Garima Upadhyay❤️</p>
+            </div>
+        </footer>
+        <!-- Footer end -->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./dist/Js/graph.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="./dist/Js/swiper.js"></script>
+    <script src="./dist/Js/index.js"></script>
+
+</body>
+
+</html>

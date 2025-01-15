@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../dist/Image/logo(2).jpg">
+    <title>Estately</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+
+    <!--Loader start-->
+    <div id="loader" class="z-50 fixed inset-0 flex justify-center items-center bg-white">
+        <div class="spinner-border text-orange-500" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!--Loader End-->
+
+
+
+    <div id="main-content" style="display: none;">
+        <!--Navbar start-->
+        <nav class="bg-gray-800 shadow-lg">
+            <div class="mx-auto px-4 py-2 container">
+                <div class="flex justify-between items-center h-16">
+                    <img src="../dist/Image/logo.png" alt="Logo">
+
+                    <button id="navbar-toggle" class="lg:hidden p-2 text-white focus:outline-none"
+                        aria-label="Toggle Navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+
+                    <div
+                        class="lg:flex justify-center items-center space-x-8 hidden w-full font-medium text-md text-white">
+                        <a href="../index.html" class="hover:text-orange-500">HOME</a>
+                        <a href="../src/about.html" class="hover:text-orange-500">ABOUT</a>
+                        <a href="../src/service.html" class="hover:text-orange-500">SERVICES</a>
+                        <a href="../src/allListing.html" class="hover:text-orange-500">PLOTS</a>
+                        <a href="../src/contact.html" class="hover:text-orange-500">CONTACTS</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden lg:hidden bg-gray-800 p-4 text-white">
+                <a href="../index.html" class="hover:text-orange-500">HOME</a>
+                <a href="../src/about.html" class="hover:text-orange-500">ABOUT</a>
+                <a href="../src/service.html" class="hover:text-orange-500">SERVICES</a>
+                <a href="../src/allListing.html" class="hover:text-orange-500">PLOTS</a>
+                <a href="../src/contact.html" class="hover:text-orange-500">CONTACTS</a>
+            </div>
+        </nav>
+        <!--Navbar End-->
+        <!-- About Section start-->
+        <div class="bg-gray-800 py-16 text-gray-100">
+            <div class="mx-auto px-4 max-w-6xl text-center">
+                <h2 class="mb-6 font-extrabold text-4xl text-orange-500" style="font-family: 'Great Vibes', cursive;">
+                    About Us</h2>
+                <p class="mb-6 text-gray-300 text-md leading-relaxed">
+                    Welcome to <span class="font-semibold text-orange-500">Estately</span>, your trusted platform for
+                    finding the perfect plot to build your dreams.
+                    We specialize in connecting buyers and sellers of plots with an easy-to-use platform that simplifies
+                    property searching and listing.
+                </p>
+            </div>
+        </div>
+        <!-- About Section end-->
+        <!-- Our Mission Section start -->
+        <div class="py-16">
+            <div class="items-center gap-8 grid grid-cols-1 md:grid-cols-2 mx-auto px-4 max-w-6xl">
+                <div>
+                    <img src="../dist/Image/about-img.svg" alt="Plots" class="rounded-lg">
+                </div>
+                <div>
+                    <h3 class="mb-4 font-bold text-3xl text-orange-500" style="font-family: 'Great Vibes', cursive;">Our
+                        Mission</h3>
+                    <p class="mb-4 text-md leading-relaxed">
+                        At Estately, our mission is to make the property search seamless and stress-free. Whether you
+                        are
+                        looking to invest, build a home, or sell your plot, we ensure that you have access to the best
+                        tools
+                        and resources to make informed decisions.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        We believe in transparency, simplicity, and customer satisfaction, helping you every step of the
+                        way
+                        to find the ideal location for your dreams to flourish.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Our Mission Section end -->
+
+        <!-- Why Choose Us Section start-->
+        <div class="py-16 text-white">
+            <div class="mx-auto px-4 max-w-6xl text-center">
+                <h3 class="mb-8 font-extrabold text-3xl text-orange-500" style="font-family: 'Great Vibes', cursive;">
+                    Why Choose Us?</h3>
+                <div class="gap-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="bg-gray-800 shadow-lg p-6 rounded-lg">
+                        <i class="mb-4 fa-map-marked-alt text-4xl text-orange-400 fas"></i>
+                        <h4 class="mb-2 font-semibold text-xl">Extensive Listings</h4>
+                        <p class="text-gray-400">We feature a wide range of plots to suit every budget and need.</p>
+                    </div>
+                    <div class="bg-gray-800 shadow-lg p-6 rounded-lg">
+                        <i class="mb-4 text-4xl text-orange-400 fa-handshake fas"></i>
+                        <h4 class="mb-2 font-semibold text-xl">Trusted Connections</h4>
+                        <p class="text-gray-400">We connect buyers and sellers with verified property details.</p>
+                    </div>
+                    <div class="bg-gray-800 shadow-lg p-6 rounded-lg">
+                        <i class="mb-4 text-4xl text-orange-400 fa-user-friends fas"></i>
+                        <h4 class="mb-2 font-semibold text-xl">Customer Support</h4>
+                        <p class="text-gray-400">Our team is here to assist you with all your queries and concerns.</p>
+                    </div>
+                    <div class="bg-gray-800 shadow-lg p-6 rounded-lg">
+                        <i class="mb-4 text-4xl text-orange-400 fa-chart-line fas"></i>
+                        <h4 class="mb-2 font-semibold text-xl">Market Insights</h4>
+                        <p class="text-gray-400">Stay updated with the latest market trends and insights.</p>
+                    </div>
+                    <div class="bg-gray-800 shadow-lg p-6 rounded-lg">
+                        <i class="mb-4 text-4xl text-orange-400 fa-shield-alt fas"></i>
+                        <h4 class="mb-2 font-semibold text-xl">Secure Transactions</h4>
+                        <p class="text-gray-400">We ensure secure and transparent transactions for peace of mind.</p>
+                    </div>
+                    <div class="bg-gray-800 shadow-lg p-6 rounded-lg">
+                        <i class="mb-4 text-4xl text-orange-400 fa-globe fas"></i>
+                        <h4 class="mb-2 font-semibold text-xl">Global Reach</h4>
+                        <p class="text-gray-400">Our platform connects you with properties worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Why Choose Us Section end-->
+
+        <!-- Footer start -->
+        <footer class="bg-gray-900 py-12 text-white">
+            <div class="gap-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-auto container">
+
+                <div>
+                    <h3 class="mb-4 font-bold text-orange-500 text-xl">About Us</h3>
+                    <p class="text-gray-400 text-md">Estately are dedicated to helping you find
+                        your dream home. Our team of experts is here to guide you through every step of the process.</p>
+                </div>
+
+                <div>
+                    <h3 class="mb-4 font-bold text-orange-500 text-xl">Quick Links</h3>
+                    <ul class="text-gray-400 text-md">
+                        <li class="mb-2"><a href="../index.html" class="hover:text-orange-500">Home</a></li>
+                        <li class="mb-2"><a href="../src/about.html" class="hover:text-orange-500">About</a></li>
+                        <li class="mb-2"><a href="../src/service.html" class="hover:text-orange-500">Services</a></li>
+                        <li class="mb-2"><a href="../src/allListing.html" class="hover:text-orange-500">Plots</a></li>
+                        <li class="mb-2"><a href="../src/contact.html" class="hover:text-orange-500">Contacts</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="mb-4 font-bold text-orange-500 text-xl">Contact Us</h3>
+                    <p class="text-gray-400 text-md">123 Estately<br>Mumbai, India<br>Email:
+                        info@Estately.com<br>Phone: +91 123 456 7890</p>
+                </div>
+
+                <div>
+                    <h3 class="mb-4 font-bold text-orange-500 text-xl">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl text-blue-600 hover:text-orange-500"><i
+                                class="fa-facebook-f fab"></i></a>
+                        <a href="#" class="text-2xl text-blue-400 hover:text-orange-500"><i
+                                class="fa-twitter fab"></i></a>
+                        <a href="#" class="text-2xl text-pink-600 hover:text-orange-500"><i
+                                class="fa-instagram fab"></i></a>
+                        <a href="#" class="text-2xl text-blue-700 hover:text-orange-500"><i
+                                class="fa-linkedin-in fab"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-500 text-md">
+                <p>&copy; 2025 Estately Company. All rights reserved.</p>
+                <p>Made by Garima Upadhyay❤️</p>
+            </div>
+        </footer>
+        <!-- Footer end -->
+    </div>
+
+ 
+    <script src="../dist/Js/index.js"></script>
+
+</body>
+
+</html>
