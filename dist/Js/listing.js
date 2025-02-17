@@ -1,4 +1,4 @@
-const API_URL = 'https://mocki.io/v1/c51497e7-f420-42fe-9a3a-fb51ba975db4'
+const API_URL = 'https://garima-203.github.io/Estately-Json/data.json'
 const resultsContainer = document.getElementById('results')
 const urlParams = new URLSearchParams(window.location.search)
 const searchQuery = urlParams.get('search')?.toLowerCase() || ''

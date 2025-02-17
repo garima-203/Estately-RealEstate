@@ -1,4 +1,4 @@
- // Nav start
+  // Nav start
  const toggleButton = document.getElementById('navbar-toggle');
  const mobileMenu = document.getElementById('mobile-menu');
 
